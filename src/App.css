@@ -10,6 +10,10 @@
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: fade infinite 5s linear;
+    -moz-animation: fade infinite 5s linear;
+    -ms-animation: fade infinite 5s linear;
+    -o-animation: fade infinite 5s linear;
+    -webkit-animation: fade infinite 5s linear;
   }
 }
 
