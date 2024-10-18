@@ -1,0 +1,41 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build --if-present
+
+      - name: 🔥 Deploy to development server
+        if: github.ref == 'refs/heads/develop' # Only for dev branch
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          username: ${{ secrets.DEV_USERNAME }}
+          server: "ftp.localenv.com"
+          password: ${{ secrets.DEV_PASS }}
+          local-dir: "./build/"
+
+      - name: 🔥🔥🔥 Deploy to production server
+        if: github.ref == 'refs/heads/main' # Only for main branch
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          username: ${{ secrets.PROD_USERNAME }}
+          server: "156.67.73.5"
+          password: ${{ secrets.PROD_PASS }}
+          local-dir: "./build/"

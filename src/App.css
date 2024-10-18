@@ -3,13 +3,13 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: fade infinite 5s linear;
   }
 }
 
@@ -23,16 +23,33 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+p {
+  color: #795548;
+  animation: altfade infinite 5s linear;
+  font-family: ui-monospace;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+@keyframes fade {
+  0% {
+    opacity:0.3;
   }
-  to {
-    transform: rotate(360deg);
+  50%{
+    opacity:1;
+  }
+  100% {
+   opacity:0.3;
+  }
+}
+@keyframes altfade {
+  0% {
+    opacity:0.8;
+  }
+  50%{
+    opacity:0;
+  }
+  100% {
+   opacity:0.8;
   }
 }
