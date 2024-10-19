@@ -1,14 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className='text'>
-          "Brewing one cup at time"
-        </p>
+        <object
+          type="image/svg+xml"
+          data={logo}
+          className="App-logo"
+          alt-text="logo"
+        ></object>
+        <p className="text">"Brewing one cup at time"</p>
       </header>
     </div>
   );

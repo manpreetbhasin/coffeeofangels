@@ -5,6 +5,11 @@
 .App-logo {
   height: 20vmin;
   pointer-events: none;
+  animation: fade infinite 5s linear;
+    -moz-animation: fade infinite 5s linear;
+    -ms-animation: fade infinite 5s linear;
+    -o-animation: fade infinite 5s linear;
+    -webkit-animation: fade infinite 5s linear;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -33,28 +38,49 @@ p {
   font-family: ui-monospace;
 }
 
-
-
 @keyframes fade {
   0% {
-    opacity:0.3;
+    opacity: 0.3;
   }
-  50%{
-    opacity:1;
+  50% {
+    opacity: 1;
   }
   100% {
-   opacity:0.3;
+    opacity: 0.3;
   }
 }
 @keyframes altfade {
   0% {
-    opacity:0.8;
+    opacity: 0.8;
   }
-  50%{
-    opacity:0;
+  50% {
+    opacity: 0;
   }
   100% {
-   opacity:0.8;
+    opacity: 0.8;
+  }
+}
+
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+@-webkit-keyframes altfade {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
   }
 }
 
@@ -65,6 +91,3 @@ p {
     pointer-events: none;
   }
 }
-
-
-
