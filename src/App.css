@@ -5,6 +5,11 @@
 .App-logo {
   height: 20vmin;
   pointer-events: none;
+  animation: fade infinite 5s linear;
+    -moz-animation: fade infinite 5s linear;
+    -ms-animation: fade infinite 5s linear;
+    -o-animation: fade infinite 5s linear;
+    -webkit-animation: fade infinite 5s linear;
 }
 
 @media (prefers-reduced-motion: no-preference) {
